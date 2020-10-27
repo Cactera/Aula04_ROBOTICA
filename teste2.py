@@ -12,10 +12,9 @@ def function_msg(event):
 sub = rospy.Subscriber('/topic1', String, function_msg)
 
 def timerCallBack(event):
-
     sum_matricula = 0
-    for digit in matricula:
-        sum_matricula +=int(digit)
+    for i in matricula:
+        sum_matricula +=int(i)
     msg = String()
     msg.data = str(sum_matricula)
     pub.publish(msg)
